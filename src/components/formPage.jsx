@@ -8,7 +8,7 @@ import ToppingMenu from './checkboxes'
 import Texts from './textInput'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-
+import Banner from './banner'
 const initialForm ={
     Pname:"Position Absulute Acı Pizza",
     price:"85.50",
@@ -81,6 +81,7 @@ function FormPage (){
 
     return(
         <>
+        <Banner/>
         <Food/>
         <RadioSelector onChange={handleChange}/>
         <DropdownMenu onChange={handleChange}/>

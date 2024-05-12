@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+
+import { Switch, Route } from 'react-router-dom';
 import FormPage from './components/formPage'
-import Banner from './components/banner'
+import LandingPage from './components/landingPage';
+import Success from './components/successPage';
 function App() {
 
 
   return (
     <>
-      <Banner/>
-      <FormPage/>
+      <LandingPage/>
     </>
   )
 }

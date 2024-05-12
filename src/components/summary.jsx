@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
 export default function Summary (props){
-    const [counter, setCounter] = useState(0);
-    
+    const [counter, setCounter] = useState(1);
+    const {form,valid,submit} = props;
     const handleClick1 = () => {
         setCounter(counter + 1);};
 
         const handleClick2 = () => {
-            // Counter state is decremented
-            setCounter(counter - 1);
+            if(counter===0){
+                return
+            }else{
+            setCounter(counter - 1);}
         };
-
+let ekMalzeme = ((form.topping.length)*5);
     return(
         <>
         <div className="counter" >
@@ -20,9 +22,9 @@ export default function Summary (props){
          </div>
          <div className="price">
             <h3>Sipariş Toplamı:</h3>
-            <p>Seçimler: <p>{}</p>  </p>
-            <p>Toplam: <p>{}</p>  </p>
-            <button>Sipariş Ver</button>
+            <p>Seçimler: <p>{ekMalzeme}</p>  </p>
+            <p>Toplam: <p>{(Number(form.price)*counter)+ekMalzeme}</p>  </p>
+            <button disabled={!valid} onClick={submit} >Sipariş Ver</button>
          </div>
         </>
     )

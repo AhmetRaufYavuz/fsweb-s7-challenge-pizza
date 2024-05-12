@@ -6,7 +6,7 @@ export default function LandingPage (){
         history.push('/Form');
       }
     return(
-        <div>
+        <div className='landing'>
             <h1>Teknolojik Yemekler</h1>
             <h2>KOD ACIKTIRIR</h2>
             <h2>PİZZA,DOYURUR</h2>

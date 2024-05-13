@@ -75,6 +75,7 @@ function FormPage (){
                   .post('https://reqres.in/api/pizza',form)
                   .then((res) => {
                     console.log(res.data)
+                    history.push("/succes")
                   });
 
               };

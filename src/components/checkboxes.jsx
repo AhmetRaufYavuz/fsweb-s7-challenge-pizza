@@ -6,8 +6,10 @@ export default function ToppingMenu(props){
          <div className='checkboxes'>
             <h3>Ek Malzemeler</h3>
             <h4>En fazla 10 adet seçebilirsiniz!</h4>
-            {Toppings.map((val)=> {return<><input type="checkbox" name="topping" value={val} id={val} onChange={onChange} />
-            <label htmlFor={val}>{val}</label></>})}
+            <div className="checkbox">
+            {Toppings.map((val)=> {return<div className="topping"><input  type="checkbox" name="topping" value={val} id={val} onChange={onChange} />
+            <label htmlFor={val}>{val}</label></div>})}
+            </div>
             </div>
         </>
     )

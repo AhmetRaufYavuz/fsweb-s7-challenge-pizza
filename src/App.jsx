@@ -5,7 +5,7 @@ import {BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 import FormPage from './components/formPage'
 import LandingPage from './components/landingPage';
 import Success from './components/successPage';
-import "./App.css"
+
 function App() {
 
 

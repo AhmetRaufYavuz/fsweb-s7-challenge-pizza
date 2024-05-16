@@ -84,8 +84,10 @@ function FormPage (){
         <>
         <Banner/>
         <Food/>
+        <div className='selections'>
         <RadioSelector onChange={handleChange}/>
         <DropdownMenu onChange={handleChange}/>
+        </div>
         <ToppingMenu onChange={handleChange}/>
         <Texts onChange={handleChange}/>
         <Summary form={form} valid={isValid} submit={handleSubmit}/>

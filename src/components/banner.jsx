@@ -5,7 +5,7 @@ export default function Banner(){
 
     return(
         <>
-        <div>
+        <div className="Banner">
             <h1>Teknolojik Yemekler</h1>
             <CustomSeparator/>
         </div>

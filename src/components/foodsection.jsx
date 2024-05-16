@@ -1,14 +1,15 @@
 import { Yemek } from "../sahteVeri"
 export default function Food(props){
     return(
-        <div>
+        <>
+        <div className="foodInfo">
             <h1>{Yemek.name}</h1>
-            <div>
-            <h2>{Yemek.price}</h2>
-            <h2>{Yemek.rating}</h2>
-            <h2>{Yemek.review}</h2>  
-            </div>
-            <article>{Yemek.detail}</article>
+            <p className="price">{Yemek.price}</p>
+            <p className="rating">{Yemek.rating}</p>
+            <p className="review">{Yemek.review}</p>
+            <article className="foodDetail">{Yemek.detail}</article>
         </div>
+        
+        </>
     )
 }

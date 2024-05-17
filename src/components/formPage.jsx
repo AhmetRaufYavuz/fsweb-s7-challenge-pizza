@@ -11,12 +11,13 @@ import axios from 'axios';
 import Banner from './banner'
 const initialForm ={
     Pname:"Position Absulute Acı Pizza",
-    price:"85.50",
+    price:"85.5",
     size:"",
     type:"",
     topping:[],
     name:"",
-    not:""
+    not:"",
+    adet:"",
 }
 const initialErrors = {
     name: false,
@@ -27,8 +28,20 @@ function FormPage (){
     const [form,setForm] = useState(initialForm);
     const [errors, setErrors] = useState(initialErrors);
     const [isValid, setIsValid] = useState(false);
+    const [counter, setCounter] = useState(1);
     const history = useHistory();
 
+    const arttır = () => {
+      setCounter(counter + 1);
+  };
+
+      const azalt = () => {
+          if(counter===0){
+              return
+          }else{
+          setCounter(counter - 1);
+      }
+      };
     const handleChange = (event) =>{
         let { name, value, type } = event.target; 
         setForm({ ...form, [name]: value });
@@ -42,10 +55,10 @@ function FormPage (){
               }
               setForm({ ...form, topping: newValue });
            }
-
+           
            if (
             (name == `name` && form.name.trim().length >= 4) ||
-            (name == 'topping' && form.topping.length >= 4)
+            (name == 'topping' && form.topping.length >= 4 && form.topping.length <= 10) 
           ) {
             setErrors({ ...errors, [name]: false });
           }else if(name == "size"|| name== "type" || name== "not"){
@@ -53,13 +66,14 @@ function FormPage (){
           } else {
             setErrors({ ...errors, [name]: true });
           }
+            
             console.log(form);
             console.log(errors)
             };
             useEffect(() => {
                 if (
                     (form.name.trim().length >= 4) &&
-                    (form.topping.length >= 4)) {
+                    (form.topping.length >= 4 && form.topping.length <= 10) && (!counter==0)) {
                   setIsValid(true);
                 } else {
                   setIsValid(false);
@@ -90,7 +104,7 @@ function FormPage (){
         </div>
         <ToppingMenu onChange={handleChange}/>
         <Texts onChange={handleChange}/>
-        <Summary form={form} valid={isValid} submit={handleSubmit}/>
+        <Summary form={form} valid={isValid} submit={handleSubmit} counter={counter} arttır={arttır} azalt={azalt} />
         </>
     )
 }

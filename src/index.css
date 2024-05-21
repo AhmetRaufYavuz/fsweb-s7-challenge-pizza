@@ -118,7 +118,6 @@ button:focus-visible {
   text-align: left;
   padding-left: 28%;
   row-gap: 1rem;
-  width: 10%;
 }
 .drop{
   display: flex;

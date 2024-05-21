@@ -16,7 +16,7 @@ function App() {
         <Route path="/" exact default>
           <LandingPage/>
         </Route>
-        <Route path="/form">
+        <Route path="/form" exact>
         <FormPage/>
         </Route>
         <Route path="/succes">
@@ -29,6 +29,3 @@ function App() {
 }
 
 export default App
-
-{/*
-*/}

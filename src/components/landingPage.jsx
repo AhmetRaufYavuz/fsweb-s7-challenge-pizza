@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 export default function LandingPage (){
     const history = useHistory();
     function toMainPage() {
-        history.push('/Form');
+        history.push('/form');
       }
     return(
         <div className='landing'>

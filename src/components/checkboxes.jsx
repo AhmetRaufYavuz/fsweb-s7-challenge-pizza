@@ -1,4 +1,5 @@
 const Toppings =["Pepperonni","Biber","Domates","Sosis","Mısır","Sucuk","Kanada Jambonu","Ananas" ,"Tavuk Izgara" , "Jalapeno", "Kabak", "Soğan","Sarımsak"]
+
 export default function ToppingMenu(props){
     const {onChange} = props
     return(

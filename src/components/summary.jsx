@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 export default function Summary (props){
-    const {form,valid,submit,counter,arttır,azalt} = props;
+    const {form,valid,submit,counter,arttır,azalt,getPrice} = props;
     
 let ekMalzeme = ((form.topping.length)*5);
 let total =(Number(form.price)*counter)+ekMalzeme;
 
+getPrice(total);
     return(
         <>
         <div className="summary">

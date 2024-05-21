@@ -13,13 +13,13 @@ import Banner from './banner'
 
 const initialForm ={
     Pname:"Position Absulute Acı Pizza",
-    price:"85.5",
+    price:85.5,
     size:"",
     type:"",
     topping:[],
     name:"",
     not:"",
-    adet:"",
+    adet:1,
 }
 const initialErrors = {
     name: false,
@@ -30,7 +30,14 @@ function FormPage (){
     const [form,setForm] = useState(initialForm);
     const [errors, setErrors] = useState(initialErrors);
     const [isValid, setIsValid] = useState(false);
+    const [counter,setCounter] =useState(1);
+    const [priceD,setPriceD] = useState(form.price);
+
     const history = useHistory();
+
+    const priceUpdate =(p)=>{
+      setPriceD(p);
+    }
 
     const arttır = () => {
       setCounter(counter + 1);
@@ -85,6 +92,13 @@ function FormPage (){
                 }
               }, [errors]);
 
+              useEffect(() => {
+               
+               setForm({ ...form,adet:counter,price:priceD})
+                
+             }, [counter,priceD]);
+
+
 
               const handleSubmit = (event) => {
                 event.preventDefault();
@@ -110,7 +124,7 @@ function FormPage (){
         </div>
         <ToppingMenu onChange={handleChange}/>
         <Texts onChange={handleChange}/>
-        <Summary form={form} valid={isValid} submit={handleSubmit} counter={counter} arttır={arttır} azalt={azalt} />
+        <Summary form={form} valid={isValid} submit={handleSubmit} counter={counter} arttır={arttır} azalt={azalt} price={priceUpdate}/>
         </>
     )
 }

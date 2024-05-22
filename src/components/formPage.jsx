@@ -124,7 +124,7 @@ function FormPage (){
         </div>
         <ToppingMenu onChange={handleChange}/>
         <Texts onChange={handleChange}/>
-        <Summary form={form} valid={isValid} submit={handleSubmit} counter={counter} arttır={arttır} azalt={azalt} price={priceUpdate}/>
+        <Summary form={form} valid={isValid} submit={handleSubmit} counter={counter} arttır={arttır} azalt={azalt} priceD={priceUpdate}/>
         </>
     )
 }

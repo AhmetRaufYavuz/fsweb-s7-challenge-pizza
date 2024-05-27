@@ -26,7 +26,7 @@ const initialErrors = {
     topping: false,
   };
 
-function FormPage (){
+function FormPage (props){
     const [form,setForm] = useState(initialForm);
     const [errors, setErrors] = useState(initialErrors);
     const [isValid, setIsValid] = useState(false);

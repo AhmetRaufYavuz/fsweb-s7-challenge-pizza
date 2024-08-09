@@ -5,6 +5,7 @@ import {BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 import FormPage from './components/formPage'
 import LandingPage from './components/landingPage';
 import Success from './components/successPage';
+import PizzaPage from './components/pizza';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           <LandingPage/>
         </Route>
         <Route path="/form" exact>
-        <FormPage/>
+        <PizzaPage/>
         </Route>
         <Route path="/succes">
         <Success/>
